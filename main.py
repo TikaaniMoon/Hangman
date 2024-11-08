@@ -1,13 +1,17 @@
 import os
+import random
 
 clear = lambda: os.system('cls')
 
 print('Привет! Я загадал слово, твоя задача - угадать его по буквам.')
 input('*Нажми Enter, чтобы продолжить*')
-clear()
-print('Поехали!')
 
-word = 'трагикомедия'
+clear()
+
+print('Погнали!')
+
+words = ['трагикомедия', 'бамбук', 'воздухопровод', 'газонокосилка', 'кириллица', 'кавычки', 'энциклопедия', 'валериана' ]
+word = random.choice(words)
 
 letters = []
 isWin = True
@@ -33,5 +37,9 @@ while hp > 0:
     if letter not in word:
         hp -= 1
         print(f'Осталось попыток {hp}')
+
+if hp == 0:
+    print('Ты проиграл! Попробуй ещё раз!')
+
 
 
